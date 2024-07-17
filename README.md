@@ -18,7 +18,7 @@ H2 Database (for development)
 Setup
 Clone the repository
 
-## Clone th Repo
+## Clone the Repo
 git clone https://github.com/ShivChauhan87/AspireApp.git
 
 
