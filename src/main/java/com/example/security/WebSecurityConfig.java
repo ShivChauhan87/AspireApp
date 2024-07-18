@@ -28,6 +28,12 @@ public class WebSecurityConfig {
                 )
                 .formLogin(withDefaults())
                 .httpBasic(withDefaults());
+        http.csrf(httpSecurityCsrfConfigurer -> {
+            httpSecurityCsrfConfigurer.disable();
+        });
+        http.headers(httpSecurityHeadersConfigurer -> {
+            httpSecurityHeadersConfigurer.disable();
+        });
         return http.build();
     }
 
