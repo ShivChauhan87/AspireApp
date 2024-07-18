@@ -52,7 +52,7 @@ spring.jpa.hibernate.ddl-auto=update<br>
 You can import the Postman collection to explore the available endpoints.
 
 ## Postman Collection
-<a href="url">Loan Application APIs.postman_collection.json</a>
+<a href="[url](https://github.com/ShivChauhan87/AspireApp/blob/main/Loan%20Application%20APIs.postman_collection.json)">Loan Application APIs.postman_collection.json</a>
 
 ## Endpoints
 User Registration and Authentication
