@@ -39,22 +39,22 @@ Ensure you have the following configuration in your application.properties file:
 
 ## properties
 Copy code
-spring.datasource.url=jdbc:h2:mem:testdb
-spring.datasource.driverClassName=org.h2.Driver
-spring.datasource.username=sa
-spring.datasource.password=password
-spring.h2.console.enabled=true
-spring.h2.console.path=/h2-console
-spring.datasource.platform=h2
-spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:h2:mem:testdb<br>
+spring.datasource.driverClassName=org.h2.Driver<br>
+spring.datasource.username=sa<br>
+spring.datasource.password=password<br>
+spring.h2.console.enabled=true<br>
+spring.h2.console.path=/h2-console<br>
+spring.datasource.platform=h2<br>
+spring.jpa.hibernate.ddl-auto=update<br>
 
 ## API Endpoints
 You can import the Postman collection to explore the available endpoints.
 
 ## Postman Collection
-Loan Application APIs.postman_collection.json
+<a href="url">Loan Application APIs.postman_collection.json</a>
 
-Endpoints
+## Endpoints
 User Registration and Authentication
 Register a new user
 
@@ -69,47 +69,17 @@ Copy code
     "username": "user1",
     "password": "password"
 }
-Login
+
+## Login
 
 The application uses HTTP Basic Authentication. Use your username and password to access protected endpoints.
 
-Loan Management
-Apply for a loan
 
-http
-Copy code
-POST /loans/apply
-Request body:
-
-json
-Copy code
-{
-    "amountRequired": 10000,
-    "loanTerm": 3
-}
-Approve a loan (Admin only)
-
-http
-Copy code
-PUT /loans/approve/{loanId}
-Repay a loan
-
-http
-Copy code
-PUT /loans/repay/{loanId}
-Request parameters:
-
-amount: Amount to be repaid
-View user loans
-
-http
-Copy code
-GET /loans
 
 ## Security
 The application uses Spring Security for authentication and authorization. The endpoints for applying for loans, viewing loans, and making repayments require authentication. The endpoint for approving loans is restricted to users with admin privileges.
 
-Example Data
+## Example Data
 For testing purposes, you can use the following example data:
 
 User Credentials:
