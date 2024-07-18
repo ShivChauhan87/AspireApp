@@ -53,7 +53,7 @@ class LoanControllerTest {
         loan.setAmountRequired(10000.0);
         loan.setLoanTerm(3);
 
-        when(loanService.applyForLoan(any(Loan.class),any(LocalDate.class))).thenReturn(loan);
+        when(loanService.applyForLoan(any(Loan.class),any(LocalDate.class), any())).thenReturn(loan);
 
         mockMvc.perform(post("/loans/apply")
                 .contentType("application/json")

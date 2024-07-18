@@ -2,6 +2,7 @@ package service;
 
 import com.example.constants.LoanStatus;
 import com.example.constants.RepaymentStatus;
+import com.example.constants.RepaymentType;
 import com.example.model.Loan;
 import com.example.model.Repayment;
 import com.example.repository.LoanRepository;
@@ -46,7 +47,7 @@ class LoanServiceTest {
 
         when(loanRepository.save(any(Loan.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
-        Loan savedLoan = loanService.applyForLoan(loan, LocalDate.now());
+        Loan savedLoan = loanService.applyForLoan(loan, LocalDate.now(), RepaymentType.WEEKLY);
 
         assertNotNull(savedLoan);
         assertEquals(LoanStatus.PENDING, savedLoan.getStatus());

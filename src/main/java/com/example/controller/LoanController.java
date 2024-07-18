@@ -23,7 +23,7 @@ public class LoanController {
         loan.setUserId(getUserIdFromPrincipal(userDetails));
         loan.setAmountRequired(loanRequest.getAmountRequired());
         loan.setLoanTerm(loanRequest.getLoanTerm());
-        return loanService.applyForLoan(loan, loanRequest.getStartDate());
+        return loanService.applyForLoan(loan, loanRequest.getStartDate(), loanRequest.getRepaymentType());
     }
 
     @PutMapping("/approve/{loanId}")
