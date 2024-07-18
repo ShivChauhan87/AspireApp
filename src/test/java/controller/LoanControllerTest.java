@@ -13,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,7 +53,7 @@ class LoanControllerTest {
         loan.setAmountRequired(10000.0);
         loan.setLoanTerm(3);
 
-        when(loanService.applyForLoan(any(Loan.class))).thenReturn(loan);
+        when(loanService.applyForLoan(any(Loan.class),any(LocalDate.class))).thenReturn(loan);
 
         mockMvc.perform(post("/loans/apply")
                 .contentType("application/json")

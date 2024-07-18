@@ -22,10 +22,10 @@ public class LoanService {
     @Autowired
     private RepaymentRepository repaymentRepository;
 
-    public Loan applyForLoan(Loan loan) {
+    public Loan applyForLoan(Loan loan, LocalDate startDate) {
         loan.setStatus(LoanStatus.PENDING);
         Loan savedLoan = loanRepository.save(loan);
-        createScheduledRepayments(savedLoan);
+        createScheduledRepayments(savedLoan, startDate);
         return savedLoan;
     }
 
@@ -58,12 +58,11 @@ public class LoanService {
         return loanRepository.findByUserId(userId);
     }
 
-    private void createScheduledRepayments(Loan loan) {
+    private void createScheduledRepayments(Loan loan, LocalDate startDate) {
         List<Repayment> repayments = new ArrayList<>();
-        LocalDate startDate = LocalDate.of(2022, 2, 7).plusWeeks(1);
         double weeklyAmount = loan.getAmountRequired() / loan.getLoanTerm();
         double remainder = loan.getAmountRequired() % loan.getLoanTerm();
-        
+
         for (int i = 0; i < loan.getLoanTerm(); i++) {
             Repayment repayment = new Repayment();
             repayment.setLoan(loan);

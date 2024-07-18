@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import com.example.dto.LoanApplicationRequest;
 import com.example.model.Loan;
 import com.example.service.LoanService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +18,12 @@ public class LoanController {
     private LoanService loanService;
 
     @PostMapping("/apply")
-    public Loan applyForLoan(@RequestBody Loan loan, @AuthenticationPrincipal UserDetails userDetails) {
+    public Loan applyForLoan(@RequestBody LoanApplicationRequest loanRequest, @AuthenticationPrincipal UserDetails userDetails) {
+        Loan loan = new Loan();
         loan.setUserId(getUserIdFromPrincipal(userDetails));
-        return loanService.applyForLoan(loan);
+        loan.setAmountRequired(loanRequest.getAmountRequired());
+        loan.setLoanTerm(loanRequest.getLoanTerm());
+        return loanService.applyForLoan(loan, loanRequest.getStartDate());
     }
 
     @PutMapping("/approve/{loanId}")
