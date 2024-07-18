@@ -11,7 +11,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+@Component("weekly")
 public class WeeklyRepaymentStrategy implements RepaymentStrategy {
 
     @Autowired

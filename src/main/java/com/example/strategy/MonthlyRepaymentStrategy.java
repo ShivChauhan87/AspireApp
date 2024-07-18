@@ -11,7 +11,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+@Component("monthly")
 public class MonthlyRepaymentStrategy implements RepaymentStrategy {
 
     @Autowired
