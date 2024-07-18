@@ -3,6 +3,8 @@ package com.example.service;
 
 import com.example.constants.LoanStatus;
 import com.example.constants.RepaymentStatus;
+import com.example.exception.LoanNotApprovedException;
+import com.example.exception.LoanNotFoundException;
 import com.example.model.Loan;
 import com.example.model.Repayment;
 import com.example.repository.LoanRepository;
@@ -50,7 +52,7 @@ public class LoanService {
             updateLoanStatusIfFullyPaid(loanId);
             return loan;
         } else {
-            throw new RuntimeException("Loan is not approved yet.");
+            throw new LoanNotApprovedException("Loan is not approved yet.");
         }
     }
 
