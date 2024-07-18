@@ -3,23 +3,23 @@
 This is a Spring Boot application that allows authenticated users to apply for loans, view their loans, make repayments, and have an admin approve loans. The project demonstrates the use of Spring Boot, JPA, and Spring Security to create a simple loan management system.
 
 ## Features
-User Registration and Authentication: Users can register and authenticate using Spring Security.
-Apply for Loans: Authenticated users can apply for loans specifying the amount and term.
-Admin Approval: Admin can approve pending loans.
-View Loans: Users can view their specific loans.
-Make Repayments: Users can make repayments towards approved loans.
-Automatic Loan Status Update: The loan status is updated automatically upon full repayment.
+User Registration and Authentication: Users can register and authenticate using Spring Security.<br>
+Apply for Loans: Authenticated users can apply for loans specifying the amount and term.<br>
+Admin Approval: Admin can approve pending loans.<br>
+View Loans: Users can view their specific loans.<br>
+Make Repayments: Users can make repayments towards approved loans.<br>
+Automatic Loan Status Update: The loan status is updated automatically upon full repayment.<br>
 
 ## Requirements
-Java 11 or higher
-Maven
-H2 Database (for development)
+Java 11 or higher<br>
+Maven<br>
+H2 Database (for development)<br>
 
 ## Setup
-Clone the Repository
+Clone the Repository<br>
 sh
 Copy code
-git clone https://github.com/ShivChauhan87/AspireApp.git
+git clone https://github.com/ShivChauhan87/AspireApp.git<br>
 cd AspireApp
 ## Build the Project
 sh
