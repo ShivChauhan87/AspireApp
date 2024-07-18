@@ -3,8 +3,6 @@ package com.example.strategy;
 import com.example.constants.RepaymentStatus;
 import com.example.model.Loan;
 import com.example.model.Repayment;
-import com.example.repository.RepaymentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
@@ -13,9 +11,6 @@ import java.util.List;
 
 @Component("weekly")
 public class WeeklyRepaymentStrategy implements RepaymentStrategy {
-
-    @Autowired
-    private RepaymentRepository repaymentRepository;
 
     @Override
     public List<Repayment> createRepaymentSchedule(Loan loan, LocalDate startDate) {
